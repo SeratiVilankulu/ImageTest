@@ -6,7 +6,9 @@ const RegisterPage = () => {
   return (
     <div className="register">
       <h1>Register Profile</h1>
-      <p className="welcome">Welcom to the registration page. Please enter your details below.</p>
+      <p className="welcome">
+        Welcom to the registration page. Please enter your details below.
+      </p>
       <form action="">
         <div className="register-form">
           <p>Full Name</p>
@@ -33,12 +35,22 @@ const RegisterPage = () => {
         <p>or</p>
       </div>
 
+      <img
+        src="/images/Image.jpg"
+        alt="Work station"
+        className="register-image"
+      />
+
       <button type="submit" className="option">
-        Sign in with Google
+        <Link to="/google-signin" className="signin-btn">
+          Sign in with Google
+        </Link>
       </button>
 
       <button type="submit" className="option">
-        Sign in with Facebook
+        <Link to="/facebook-signin" className="signin-btn">
+          Sign in with Facebook
+        </Link>
       </button>
     </div>
   );
