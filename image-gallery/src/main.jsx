@@ -5,6 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LoginPage from "./Pages/Login/LoginPage.jsx";
 import RegisterPage from "./Pages/Register/RegisterPage.jsx";
 import "./index.css";
+import GoogleSignin from "./Pages/SocialSignin/GoogleSignin.jsx";
+import FacebookSignin from "./Pages/SocialSignin/FacebookSignin.jsx";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,14 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <RegisterPage />,
+  },
+  {
+    path: "/google-signin",
+    element: <GoogleSignin />,
+  },
+  {
+    path: "/facebook-signin",
+    element: <FacebookSignin />,
   },
 
   //add more routes

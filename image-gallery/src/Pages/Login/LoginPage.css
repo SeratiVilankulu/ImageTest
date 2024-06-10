@@ -1,6 +1,7 @@
-body {
+ body {
   flex: 1;
-  background-image: url("/images/Image.jpg");
+  /*background-image: url("/images/Image.jpg");*/
+  background: white;
   background-repeat: no-repeat, repeat;
   background-size: cover;
   width: 1740px;
