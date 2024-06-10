@@ -4,10 +4,10 @@ import "./RegisterPage.css";
 
 const RegisterPage = () => {
   return (
-    <div className="register">
+    <div className="register-container">
       <h1>Register Profile</h1>
       <p className="welcome">
-        Welcom to the registration page. Please enter your details below.
+        Welcome to the registration page. Please enter your details below.
       </p>
       <form action="">
         <div className="register-form">

@@ -1,14 +1,6 @@
-body {
-  margin: auto;
-  padding: 0;
-  font-family: "Arial", sans-serif;
-  height: 100%;
-  width: 1440px;
-  top: 6967px;
-  left: 3584px;
-}
-
-.register {
+.register-container {
+  font-family: "Inter", sans-serif;
+  color: rgb(15, 60, 76);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,6 +8,10 @@ body {
   width: 500px;
   padding: 40px 40px;
   background-color: white;
+  width: 1440px;
+  height: 1425px;
+  top: 6967px;
+  left: 3584px;
 }
 
 img {
@@ -60,6 +56,10 @@ img {
 
 .register-form {
   margin-bottom: 10px;
+  width: 400px;
+  height: 52px;
+  top: 274px;
+  left: 73px;
 }
 
 .register-form input {
@@ -74,7 +74,7 @@ img {
   background-color: rgb(27, 139, 181);
   color: white;
   border: none;
-  width: 95%;
+  width: 400px;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -85,21 +85,33 @@ img {
 }
 
 .separator {
-  text-align: center;
-  padding: 0;
+  font-family: "Inter", sans-serif;
+  padding: 0 200px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: 600;
 }
 
 .option {
-  width: 95%;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  border: none;
+  width: 400px;
+  height: 44px;
   margin-left: 0;
   align-items: center;
+  border-radius: 4px;
   margin-top: 20px;
   background: white;
   color: rgb(15, 60, 76);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  top: 708px;
+  left: 73px;
+  padding: 10px;
+  gap: 10px;
 }
 
 .signin-btn {
