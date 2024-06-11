@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api.Dtos.Images;
 
 namespace api.Dtos.Users
 {
@@ -16,5 +17,7 @@ namespace api.Dtos.Users
     public string Salt { get; set; } = string.Empty;
     public DateTime PasswordChangeDate { get; set; }
     public DateTime ProfileCreateDate { get; set; }= DateTime.Now; 
+
+    public List<ImagesDto> Images {get; set;}
     }
 }

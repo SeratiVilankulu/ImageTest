@@ -41,13 +41,18 @@ namespace api.Repository
     }
 
     public async Task<List<Users>> GetAllAsync()
-    {;
-      return await _context.Users.ToListAsync();
+    {
+      return await _context.Users.Include(c => c.Images).ToListAsync();
     }
 
     public async Task<Users?> GetByIdAsync(int id)
     {
-      return await _context.Users.FindAsync(id);
+      return await _context.Users.Include(c => c.Images).FirstOrDefaultAsync(i => i.UserID == id);
+    }
+
+    public Task<bool> UserExists(int id)
+    {
+      return _context.Users.AnyAsync(s => s.UserID == id);
     }
 
     public async Task<Users?> UpdateAsync(int id, UpdateUsersRequestDto usersDto)
@@ -72,5 +77,5 @@ namespace api.Repository
 
       return existingUser;
     }
- }
+  }
 }

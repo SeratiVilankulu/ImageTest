@@ -21,5 +21,26 @@ namespace api.Mappers
         UploadDate = imagesModel.UploadDate
       };
     }
+
+    public static Images ToImagesFromCreate(this CreateImagesDto imagesDto, int userID)
+    {
+      return new Images
+      {
+        Title = imagesDto.Title,
+        Description = imagesDto.Description,
+        ImageURL = imagesDto.ImageURL,
+        UserId = userID
+      };
+    }
+
+    public static Images ToImagesFromUpdate(this UpdateImagesRequestDto imagesDto)
+    {
+      return new Images
+      {
+        Title = imagesDto.Title,
+        Description = imagesDto.Description,
+        ImageURL = imagesDto.ImageURL,
+      };
+    }
   }
 }

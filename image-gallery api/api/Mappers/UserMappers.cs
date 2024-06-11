@@ -20,7 +20,8 @@ namespace api.Mappers
         Email = usersModel.Email,
         Password = usersModel.Password,
         PasswordChangeDate = usersModel.PasswordChangeDate,
-        ProfileCreateDate = usersModel.ProfileCreateDate
+        ProfileCreateDate = usersModel.ProfileCreateDate,
+        Images = usersModel.Images.Select(c => c.ToImagesDto()).ToList()
       };
     }
 
