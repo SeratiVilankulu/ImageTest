@@ -5,6 +5,10 @@ import { FaUser } from "react-icons/fa6";
 import { IoMdLock } from "react-icons/io";
 
 const LoginPage = () => {
+  const handleHome = () => {
+    console.log("clicked");
+  };
+
   return (
     <div className="wrapper">
       <h1>Image Gallery App</h1>
@@ -28,7 +32,7 @@ const LoginPage = () => {
           <a href="#">Forgot password?</a>
         </div>
 
-        <button type="submit" className="login">
+        <button type="submit" className="login" onClick={handleHome}>
           Login
         </button>
 

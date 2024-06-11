@@ -1,3 +1,17 @@
+.Google-container {
+  font-family: "Inter", sans-serif;
+  color: rgb(15, 60, 76);
+  display: flex;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 0px;
+  background-color: white;
+  width: 1715px;
+  height: 925px;
+  top: 6967px;
+  left: 3584px;
+}
+
 .sign-in {
   display: flex;
   flex-direction: column;

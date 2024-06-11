@@ -2,23 +2,36 @@
   font-family: "Inter", sans-serif;
   color: rgb(15, 60, 76);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
   min-height: 100vh;
-  width: 500px;
-  padding: 40px 40px;
+  padding: 0px;
   background-color: white;
-  width: 1440px;
-  height: 1425px;
+  width: 1715px;
+  height: 925px;
   top: 6967px;
   left: 3584px;
 }
 
+.form-container {
+  width: 40%;
+  height: 100%;
+  padding-top: 120px;
+  padding-bottom: 50px;
+  padding-left: 120px;
+  padding-right: 10px;
+}
+
+.register-image {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  padding: 30px;
+}
+
 img {
-  width: 956px;
-  height: 717px;
+  width: 966px;
+  height: 800px;
   top: 54px;
-  left: 540px;
   border-radius: 4px;
 }
 
@@ -114,7 +127,12 @@ img {
   gap: 10px;
 }
 
+svg {
+  font-size: 15px;
+}
+
 .signin-btn {
+  padding-left: 10px;
   text-decoration: none;
   color: rgb(15, 60, 76);
 }

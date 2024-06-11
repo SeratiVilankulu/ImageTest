@@ -1,10 +1,38 @@
-.sign-in {
+.Facebook-container {
+  font-family: "Inter", sans-serif;
+  color: rgb(15, 60, 76);
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
   min-height: 100vh;
-  width: 500px;
-  padding: 20px 40px;
+  padding: 0px;
   background-color: white;
+  width: 1715px;
+  height: 925px;
+  top: 6967px;
+  left: 3584px;
+}
+
+.form-container {
+  width: 40%;
+  height: 100%;
+  padding-top: 120px;
+  padding-bottom: 50px;
+  padding-left: 120px;
+  padding-right: 10px;
+}
+
+.register-image {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  padding: 30px;
+}
+
+img {
+  width: 966px;
+  height: 800px;
+  top: 54px;
+  border-radius: 4px;
 }
 
 .sign-in h1 {
@@ -47,7 +75,7 @@
 }
 
 .signin-input input {
-  width: 95%;
+  width: 400px;
   padding: 10px;
   border: 1px solid rgb(204, 204, 204);
   border-radius: 5px;
