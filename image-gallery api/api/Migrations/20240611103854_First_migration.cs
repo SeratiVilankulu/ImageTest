@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace api.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class First_migration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -56,33 +56,35 @@ namespace api.Migrations
                     ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SecretEditLink = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UploadDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserID1 = table.Column<int>(type: "int", nullable: true),
-                    CategoryID1 = table.Column<int>(type: "int", nullable: true)
+                    UserId = table.Column<int>(type: "int", nullable: true),
+                    CategoryId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Images", x => x.ImageID);
                     table.ForeignKey(
-                        name: "FK_Images_Categories_CategoryID1",
-                        column: x => x.CategoryID1,
+                        name: "FK_Images_Categories_CategoryId",
+                        column: x => x.CategoryId,
                         principalTable: "Categories",
-                        principalColumn: "CategoryID");
+                        principalColumn: "CategoryID",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Images_Users_UserID1",
-                        column: x => x.UserID1,
+                        name: "FK_Images_Users_UserId",
+                        column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "UserID");
+                        principalColumn: "UserID",
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Images_CategoryID1",
+                name: "IX_Images_CategoryId",
                 table: "Images",
-                column: "CategoryID1");
+                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Images_UserID1",
+                name: "IX_Images_UserId",
                 table: "Images",
-                column: "UserID1");
+                column: "UserId");
         }
 
         /// <inheritdoc />

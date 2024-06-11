@@ -12,8 +12,8 @@ using api.Data;
 namespace api.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240606135719_init")]
-    partial class init
+    [Migration("20240611103854_First_migration")]
+    partial class First_migration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,7 +53,7 @@ namespace api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ImageID"));
 
-                    b.Property<int?>("CategoryID1")
+                    b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -75,14 +75,14 @@ namespace api.Migrations
                     b.Property<DateTime>("UploadDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("UserID1")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("ImageID");
 
-                    b.HasIndex("CategoryID1");
+                    b.HasIndex("CategoryId");
 
-                    b.HasIndex("UserID1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Images");
                 });
@@ -132,17 +132,19 @@ namespace api.Migrations
 
             modelBuilder.Entity("api.Models.Images", b =>
                 {
-                    b.HasOne("api.Models.Categories", "CategoryID")
+                    b.HasOne("api.Models.Categories", "Category")
                         .WithMany("Images")
-                        .HasForeignKey("CategoryID1");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("api.Models.Users", "UserID")
+                    b.HasOne("api.Models.Users", "User")
                         .WithMany("Images")
-                        .HasForeignKey("UserID1");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
-                    b.Navigation("CategoryID");
+                    b.Navigation("Category");
 
-                    b.Navigation("UserID");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("api.Models.Categories", b =>
