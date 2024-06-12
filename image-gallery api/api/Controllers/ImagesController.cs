@@ -25,6 +25,9 @@ namespace api.Controllers
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
+      if(!ModelState.IsValid)
+        return BadRequest(ModelState);
+
       var images = await _imagesRepo.GetAllAsync();
 
       var imageDto = images.Select(s => s.ToImagesDto());
@@ -33,9 +36,12 @@ namespace api.Controllers
       
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id:int}")]
     public async Task<IActionResult> GetById([FromRoute] int id)
     {
+      if(!ModelState.IsValid)
+        return BadRequest(ModelState);
+
       var images = await _imagesRepo.GetByIdAsync(id);
 
       if(images == null)
@@ -46,9 +52,12 @@ namespace api.Controllers
       return Ok(images.ToImagesDto());
     }
 
-    [HttpPost("{userID}")]
+    [HttpPost("{userID:int}")]
     public async Task<IActionResult> Create([FromRoute] int userID, CreateImagesDto imagesDto)
     {
+      if(!ModelState.IsValid)
+        return BadRequest(ModelState);
+
       if(!await _usersRepo.UserExists(userID))
       {
         return BadRequest("User does not exist");
@@ -60,9 +69,12 @@ namespace api.Controllers
     }
 
     [HttpPut]
-    [Route("{id}")]
+    [Route("{id:int}")]
     public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateImagesRequestDto updateDto)
     {
+      if(!ModelState.IsValid)
+        return BadRequest(ModelState);
+
       var images = await _imagesRepo.UpdateAsync(id, updateDto.ToImagesFromUpdate());
 
       if(images == null)
@@ -74,9 +86,12 @@ namespace api.Controllers
     }
 
     [HttpDelete]
-    [Route("{id}")]
+    [Route("{id:int}")]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
+      if(!ModelState.IsValid)
+        return BadRequest(ModelState);
+
       var imagesModel = await _imagesRepo.DeleteAsync(id);
 
       if(imagesModel == null)
