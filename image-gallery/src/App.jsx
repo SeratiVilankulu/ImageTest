@@ -5,6 +5,7 @@ import RegisterPage from "./Pages/Register/RegisterPage";
 import HomePage from "./Pages/HomePage";
 import GoogleSignin from "./Pages/SocialSignin/GoogleSignin";
 import GoogleSignin from "./Pages/SocialSignin/FacebookSignin";
+import ResetPassword from "./Pages/ResetPassword/ResetPassword";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
       </Route>
       <Route path="/facebook-signin">
         <GoogleSignin />
+      </Route>
+      <Route path="/reset-password">
+        <ResetPassword />
       </Route>
     </div>
   );
