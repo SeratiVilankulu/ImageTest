@@ -6,6 +6,7 @@ using api.Data;
 using api.Dtos.Users;
 using api.Interfaces;
 using api.Models;
+using api.Queries;
 using Microsoft.EntityFrameworkCore;
 
 namespace api.Repository
@@ -40,9 +41,29 @@ namespace api.Repository
       return usersModel;
     }
 
-    public async Task<List<Users>> GetAllAsync()
+    public async Task<List<Users>> GetAllAsync(QueryObject query)
     {
-      return await _context.Users.Include(c => c.Images).ToListAsync();
+      var users =  _context.Users.Include(c => c.Images).AsQueryable();
+
+      if(!string.IsNullOrWhiteSpace(query.UserName))
+      {
+        users = users.Where(s => s.UserName.Contains(query.UserName));
+      }
+
+      if(!string.IsNullOrWhiteSpace(query.FirstName))
+      {
+        users = users.Where(s => s.FirstName.Contains(query.FirstName));
+      }
+
+      if(!string.IsNullOrWhiteSpace(query.SortBy))
+      {
+        if(query.SortBy.Equals("FirstName", StringComparison.OrdinalIgnoreCase))
+        {
+          users = query.IsDecsending ? users.OrderByDescending(s => s.FirstName): users.OrderBy(s => s.FirstName);
+        }
+      }
+
+      return await users.ToListAsync();
     }
 
     public async Task<Users?> GetByIdAsync(int id)

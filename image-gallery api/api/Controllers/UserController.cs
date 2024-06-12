@@ -6,6 +6,7 @@ using api.Data;
 using api.Dtos.Users;
 using api.Interfaces;
 using api.Mappers;
+using api.Queries;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,12 +25,12 @@ namespace api.Controllers
     }  
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> GetAll([FromQuery] QueryObject query)
     {
       if(!ModelState.IsValid)
         return BadRequest(ModelState);
-        
-      var users = await _usersRepo.GetAllAsync();
+
+      var users = await _usersRepo.GetAllAsync(query);
       
       var usersDto = users.Select(s => s.ToUserDto());
 
