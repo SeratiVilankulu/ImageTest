@@ -15,7 +15,7 @@ namespace api.Data
 
         }
 
-        public DbSet<Employee> Employee { get; set; }
+        public DbSet<EmployeeModel> Employees { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
