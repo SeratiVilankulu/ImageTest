@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 
-
 import LoginPage from "./Pages/Login/LoginPage.jsx";
 import RegisterPage from "./Pages/Register/RegisterPage.jsx";
 import GoogleSignin from "./Pages/SocialSignin/GoogleSignin.jsx";
 import FacebookSignin from "./Pages/SocialSignin/FacebookSignin.jsx";
 import ResetPassword from "./Pages/ResetPassword/ResetPassword.jsx";
+import UploadPage from "./Pages/Upload/UploadPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/reset-password",
     element: <ResetPassword />,
+  },
+  {
+    path: "/image-upload",
+    element: <UploadPage />,
   },
 
   //add more routes

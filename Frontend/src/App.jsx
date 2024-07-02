@@ -6,6 +6,7 @@ import HomePage from "./Pages/HomePage";
 import GoogleSignin from "./Pages/SocialSignin/GoogleSignin";
 import GoogleSignin from "./Pages/SocialSignin/FacebookSignin";
 import ResetPassword from "./Pages/ResetPassword/ResetPassword";
+import UploadPage from "./Pages/Upload/UploadPage";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
       </Route>
       <Route path="/reset-password">
         <ResetPassword />
+      </Route>
+      <Route path="/image-upload">
+        <UploadPage />
       </Route>
     </div>
   );

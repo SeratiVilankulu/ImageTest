@@ -1,0 +1,84 @@
+.upload-container {
+  font-family: "Poppins", sans-serif;
+  color: rgb(15, 60, 76);
+  display: flex;
+  justify-content: space-around;
+  min-height: 100vh;
+  padding: 0px;
+  background-color: white;
+  width: 1715px;
+  height: 925px;
+  top: 6967px;
+  left: 3584px;
+}
+
+.heading {
+  text-align: center;
+  color: rgb(15, 60, 76);
+  background-color: rgb(221, 221, 221);
+}
+
+.heading h1 {
+  height: 80px;
+  padding-top: 25px;
+}
+
+.employee-form {
+  margin: 20px;
+  width: 25%;
+  max-width: 600px;
+  height: 65%;
+  border: 1px grey;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.employee-form .image {
+  max-width: 100%; /* Ensures the image is responsive */
+  height: auto;
+  padding-top: 0px;
+  margin-bottom: 10px; /* Adds space below the image */
+}
+
+.employee-form p {
+  font-size: 25px;
+  font-weight: 200;
+}
+
+.employee-form .form {
+  padding: 10px;
+}
+
+.employeelist {
+  margin: 50px 20px;
+}
+
+div form {
+  padding: 5px;
+}
+
+.form-control {
+  margin: 12px 0;
+  border: 1px solid rgb(199, 197, 197);
+  border-radius: 4px;
+  padding: 8px;
+  width: 70%;
+  box-sizing: border-box;
+}
+
+input .imageFile {
+  padding: 10px, 0;
+}
+
+.Submit-btn {
+  font-family: "Poppins", sans-serif;
+  background: rgb(219, 218, 218);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+
+
+
